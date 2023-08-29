@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ListView
+import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import br.com.alura.application.R
@@ -18,6 +19,11 @@ import java.util.*
 class HomePageActivity : AppCompatActivity(R.layout.activity_home_page) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        supportFragmentManager.commit {
+            setReorderingAllowed(true)
+            add<ChatFragment>(R.id.fragmentContainerView)
+        }
 
         val chat = findViewById<Button>(R.id.chat_view)
         val chamadas = findViewById<Button>(R.id.call_view)
