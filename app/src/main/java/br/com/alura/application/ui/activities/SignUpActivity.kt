@@ -8,6 +8,9 @@ import android.widget.Toast
 import br.com.alura.application.R
 import br.com.alura.application.model.User
 import br.com.alura.application.model.UserDTO
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class SignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

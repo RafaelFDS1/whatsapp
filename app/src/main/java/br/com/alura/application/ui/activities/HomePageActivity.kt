@@ -14,6 +14,10 @@ import br.com.alura.application.ui.fragments.CallFragment
 import br.com.alura.application.ui.fragments.ChatFragment
 import br.com.alura.application.ui.fragments.CommFragment
 import br.com.alura.application.ui.fragments.StatusFragment
+import com.google.firebase.FirebaseApp
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class HomePageActivity : AppCompatActivity(R.layout.activity_home_page) {
     override fun onCreate(savedInstanceState: Bundle?) {

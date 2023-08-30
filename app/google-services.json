@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "523344991120",
+    "firebase_url": "https://teste-d6a5a-default-rtdb.firebaseio.com",
+    "project_id": "teste-d6a5a",
+    "storage_bucket": "teste-d6a5a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523344991120:android:e86bdf3b4adf3ec24a9915",
+        "android_client_info": {
+          "package_name": "br.com.alura.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "523344991120-favdjfg6t7ntdb04614sdl3kvn9veip4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoUSr2b-LVVKJM9iPdi6hrPFLQ1FZCDiI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "523344991120-favdjfg6t7ntdb04614sdl3kvn9veip4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
