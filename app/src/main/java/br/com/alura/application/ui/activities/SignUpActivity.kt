@@ -1,4 +1,4 @@
-package br.com.alura.application.view
+package br.com.alura.application.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

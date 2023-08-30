@@ -14,16 +14,21 @@
         android:theme="@style/Theme.Application"
         tools:targetApi="31">
         <activity
-            android:name=".view.InternalChatActivity"
+            android:name=".ApiActivity"
+            android:exported="false"
+            android:label="@string/title_activity_api"
+            android:theme="@style/Theme.Application" />
+        <activity
+            android:name=".ui.activities.InternalChatActivity"
             android:exported="false" />
         <activity
-            android:name=".view.SignUpActivity"
+            android:name=".ui.activities.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".view.HomePageActivity"
+            android:name=".ui.activities.HomePageActivity"
             android:exported="false" />
         <activity
-            android:name=".view.LoginActivity"
+            android:name=".ui.activities.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package br.com.alura.application.view
+package br.com.alura.application.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,10 +10,10 @@ import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import br.com.alura.application.R
-import br.com.alura.application.view.fragments.CallFragment
-import br.com.alura.application.view.fragments.ChatFragment
-import br.com.alura.application.view.fragments.CommFragment
-import br.com.alura.application.view.fragments.StatusFragment
+import br.com.alura.application.ui.fragments.CallFragment
+import br.com.alura.application.ui.fragments.ChatFragment
+import br.com.alura.application.ui.fragments.CommFragment
+import br.com.alura.application.ui.fragments.StatusFragment
 
 class HomePageActivity : AppCompatActivity(R.layout.activity_home_page) {
     override fun onCreate(savedInstanceState: Bundle?) {
