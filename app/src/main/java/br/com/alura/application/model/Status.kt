@@ -1,5 +1,7 @@
 package br.com.alura.application.model
 
-class Status {
-
-}
+data class Status(
+    val user: User,
+    val sttsId: Int,
+    val dateStatus: String
+)

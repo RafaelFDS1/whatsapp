@@ -21,13 +21,6 @@ class ChatRecycleAdapter(
             itemView.setOnClickListener{
                 listener(adapterPosition)
             }
-
-            val name = itemView.findViewById<TextView>(R.id.chat_name)
-            val lastMessage = itemView.findViewById<TextView>(R.id.chat_last_message)
-
-            name.text = chat.nome
-            lastMessage.text = chat.desc
-
         }
     }
 

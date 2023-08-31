@@ -9,13 +9,12 @@ import android.widget.TextView
 import android.widget.Toast
 import br.com.alura.application.R
 import br.com.alura.application.model.User
-import br.com.alura.application.model.UserDTO
+import br.com.alura.application.controller.UserDTO
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.actvity_login)
-        UserDTO.user = User(nome = "Rafael", login = "adm", password = "1234")
         setSignInBtn()
 
         val btn = findViewById<TextView>(R.id.clickText)
@@ -33,7 +32,7 @@ class LoginActivity : AppCompatActivity() {
             if (UserDTO.user == null) {
                 Toast.makeText(this, "Login ainda não cadastrado.", Toast.LENGTH_SHORT).show()
             } else {
-                if (UserDTO.user!!.login == login.text.toString() && UserDTO.user!!.password == password.text.toString()) {
+                if (UserDTO.user!!.numero == login.text.toString() && UserDTO.user!!.password == password.text.toString()) {
                     startActivity(Intent(this, HomePageActivity::class.java))
                     finish()
                 } else {
