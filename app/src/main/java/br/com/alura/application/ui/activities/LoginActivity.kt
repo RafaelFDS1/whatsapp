@@ -25,21 +25,23 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun setSignInBtn() {
-        val btn = findViewById<Button>(R.id.button)
-        btn.setOnClickListener {
-            val login = findViewById<EditText>(R.id.login)
-            val password = findViewById<EditText>(R.id.password)
-            if (UserDTO.user == null) {
-                Toast.makeText(this, "Login ainda não cadastrado.", Toast.LENGTH_SHORT).show()
-            } else {
-                if (UserDTO.user!!.numero == login.text.toString() && UserDTO.user!!.password == password.text.toString()) {
-                    startActivity(Intent(this, HomePageActivity::class.java))
-                    finish()
-                } else {
-                    Toast.makeText(this, "Login ou password não condizentes.", Toast.LENGTH_SHORT)
-                        .show()
-                }
-            }
-        }
+        val dto = UserDTO()
+        println(dto.getUser(1))
+//        val btn = findViewById<Button>(R.id.button)
+//        btn.setOnClickListener {
+//            val login = findViewById<EditText>(R.id.login)
+//            val password = findViewById<EditText>(R.id.password)
+//            if (UserDTO.user == null) {
+//                Toast.makeText(this, "Login ainda não cadastrado.", Toast.LENGTH_SHORT).show()
+//            } else {
+//                if (UserDTO.user!!.numero == login.text.toString() && UserDTO.user!!.password == password.text.toString()) {
+//                    startActivity(Intent(this, HomePageActivity::class.java))
+//                    finish()
+//                } else {
+//                    Toast.makeText(this, "Login ou password não condizentes.", Toast.LENGTH_SHORT)
+//                        .show()
+//                }
+//            }
+//        }
     }
 }

@@ -8,6 +8,11 @@ import android.widget.Toast
 import br.com.alura.application.R
 import br.com.alura.application.model.User
 import br.com.alura.application.controller.UserDTO
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.ktx.values
+import kotlinx.coroutines.flow.count
+import kotlinx.coroutines.flow.forEach
+import kotlinx.coroutines.flow.last
 
 class SignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +36,13 @@ class SignUpActivity : AppCompatActivity() {
                 if(passwordSignup != confirmPassword) {
                     Toast.makeText(this, "Password doesn't match.", Toast.LENGTH_SHORT).show()
                 }else {
-                    UserDTO.user = User(nome = nameSignup, numero = numeroSignup, password = passwordSignup, userId = 1)
+                    val dto = UserDTO()
+                    var user: User? = null
+                    dto.database.child("users").get().addOnSuccessListener {
+                        val userId = it.childrenCount + 1
+                        user = User(nome = nameSignup, numero = numeroSignup, password = passwordSignup, userId = userId, isActive = true)
+                        dto.user = user
+                    }
                     finish()
                 }
             }
