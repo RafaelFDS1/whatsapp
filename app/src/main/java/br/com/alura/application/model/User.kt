@@ -5,7 +5,6 @@ import br.com.alura.application.model.enums.TipoEnum
 import java.util.*
 
 data class User (
-    val userId: Long? = null,
     val nome: String? = null,
     val desc: String? = "Oi, eu cheguei no whatsapp...",
     val numero: String? = null,

@@ -26,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
 
     fun setSignInBtn() {
         val dto = UserDTO()
-        println(dto.getUser(1))
+        println(dto.getUser("11958717152"))
 //        val btn = findViewById<Button>(R.id.button)
 //        btn.setOnClickListener {
 //            val login = findViewById<EditText>(R.id.login)

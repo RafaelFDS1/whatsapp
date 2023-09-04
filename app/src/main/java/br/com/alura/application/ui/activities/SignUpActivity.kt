@@ -37,12 +37,7 @@ class SignUpActivity : AppCompatActivity() {
                     Toast.makeText(this, "Password doesn't match.", Toast.LENGTH_SHORT).show()
                 }else {
                     val dto = UserDTO()
-                    var user: User? = null
-                    dto.database.child("users").get().addOnSuccessListener {
-                        val userId = it.childrenCount + 1
-                        user = User(nome = nameSignup, numero = numeroSignup, password = passwordSignup, userId = userId, isActive = true)
-                        dto.user = user
-                    }
+                    dto.user = User(nome = nameSignup, numero = numeroSignup, password = passwordSignup, isActive = true)
                     finish()
                 }
             }
