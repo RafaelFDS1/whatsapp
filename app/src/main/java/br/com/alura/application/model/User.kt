@@ -9,8 +9,9 @@ data class User (
     val desc: String? = "Oi, eu cheguei no whatsapp...",
     val numero: String? = null,
     val password: String? = null,
-    val isActive: Boolean? = null,
-    val calls: List<Calls>? = mutableListOf(Calls(dateCall = "Today", StatusEnum.EFETUADA, TipoEnum.LIGACAO_NORMAL)),
+    var isActive: Boolean? = true,
+    val contacts: List<User> = mutableListOf(),
+    val calls: List<Calls>? = mutableListOf(),
     val comm: List<Community> = mutableListOf(),
     val stts: List<Status> = mutableListOf(),
     val chat: List<Chat> = mutableListOf()

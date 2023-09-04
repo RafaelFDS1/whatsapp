@@ -37,7 +37,7 @@ class SignUpActivity : AppCompatActivity() {
                     Toast.makeText(this, "Password doesn't match.", Toast.LENGTH_SHORT).show()
                 }else {
                     val dto = UserDTO()
-                    dto.user = User(nome = nameSignup, numero = numeroSignup, password = passwordSignup, isActive = true)
+                    dto.user = User(nome = nameSignup, numero = numeroSignup, password = passwordSignup)
                     finish()
                 }
             }

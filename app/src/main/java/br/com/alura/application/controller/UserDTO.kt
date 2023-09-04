@@ -1,18 +1,12 @@
 package br.com.alura.application.controller
 
 import br.com.alura.application.model.*
-import br.com.alura.application.model.enums.StatusEnum
-import br.com.alura.application.model.enums.TipoEnum
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 
 class UserDTO {
-    val database: DatabaseReference = Firebase.database.reference
+    private val database: DatabaseReference = Firebase.database.reference
     var user: User? = null
         set(userUpdate) {
             if(userUpdate == null){
@@ -22,15 +16,15 @@ class UserDTO {
             field = userUpdate
         }
 
-    fun getUser(numero: String): User? {
+    fun getUser(numero: String, callback: (User?) -> Unit){
         database.child("users").child(numero).get().addOnSuccessListener {
+            var teste: User? = null
             if (it.exists()) {
-                val userUpdate = it.getValue(User::class.java)
-                user = userUpdate
+                teste = it.getValue(User::class.java)
             } else {
-                user = null
+                teste = null
             }
+            callback(teste)
         }
-        return user
     }
 }

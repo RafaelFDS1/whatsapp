@@ -8,7 +8,6 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import br.com.alura.application.R
-import br.com.alura.application.model.User
 import br.com.alura.application.controller.UserDTO
 
 class LoginActivity : AppCompatActivity() {
@@ -23,25 +22,26 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
-
     fun setSignInBtn() {
-        val dto = UserDTO()
-        println(dto.getUser("11958717152"))
-//        val btn = findViewById<Button>(R.id.button)
-//        btn.setOnClickListener {
-//            val login = findViewById<EditText>(R.id.login)
-//            val password = findViewById<EditText>(R.id.password)
-//            if (UserDTO.user == null) {
-//                Toast.makeText(this, "Login ainda não cadastrado.", Toast.LENGTH_SHORT).show()
-//            } else {
-//                if (UserDTO.user!!.numero == login.text.toString() && UserDTO.user!!.password == password.text.toString()) {
-//                    startActivity(Intent(this, HomePageActivity::class.java))
-//                    finish()
-//                } else {
-//                    Toast.makeText(this, "Login ou password não condizentes.", Toast.LENGTH_SHORT)
-//                        .show()
-//                }
-//            }
-//        }
+        val btn = findViewById<Button>(R.id.button)
+        btn.setOnClickListener {
+            val dto = UserDTO()
+            val number = findViewById<EditText>(R.id.number).text.toString()
+            val password = findViewById<EditText>(R.id.password).text.toString()
+            dto.getUser(number){ user ->
+                println("Usuário retornado: $user")
+                if (user == null) {
+                    Toast.makeText(this, "Login ainda não cadastrado.", Toast.LENGTH_SHORT).show()
+                } else {
+                    if (user.numero == number && user.password == password) {
+                        startActivity(Intent(this, HomePageActivity::class.java))
+                        finish()
+                    } else {
+                        Toast.makeText(this, "Login ou password não condizentes.", Toast.LENGTH_SHORT)
+                            .show()
+                    }
+                }
+            }
+        }
     }
 }
